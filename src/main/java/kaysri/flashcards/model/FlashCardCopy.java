@@ -3,12 +3,14 @@ package kaysri.flashcards.model;
 import lombok.Data;
 import lombok.NonNull;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data
 @Entity
-@Table(name = "flashcard")
-public class FlashCard {
+public class FlashCardCopy {
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,7 @@ public class FlashCard {
    @NonNull
    private String answer;
 
-   public FlashCard() {
+   public FlashCardCopy() {
 
    }
 }

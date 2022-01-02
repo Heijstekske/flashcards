@@ -13,13 +13,4 @@ public class FlashCardController {
       return "index";
    }
 
-//   @GetMapping("/newcards")
-//   public String goToNewCards(){
-//      return "newcards";
-//   }
-
-   @GetMapping("/test")
-   public String goToTest(){
-      return "test";
-   }
 }

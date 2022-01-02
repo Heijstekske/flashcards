@@ -14,6 +14,35 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Test</h1>
+
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+
+                <div class="panel-heading">
+                    <h1 class="panel-title">FlashCards Test</h1>
+                </div>
+                <div class="panel-body">
+                    <h1 th:text="${flashcard.getQuestion()}">Question</h1>
+                    <div id="welcomeDiv" style="visibility:hidden;" class="answer_list"><h1
+                            th:text="${flashcard.getAnswer()}">Answer</h1></div>
+                    <input id="answerButton" type="button" style="display:block;" name="answer" value="Show Answer"
+                           onclick="showDiv()"/>
+                    <input id="nextQuestion" type="button" style="display:none;" name="question" value="Next Question"
+                           th:onclick="|window.location.href='/test'|"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showDiv() {
+        document.getElementById('welcomeDiv').style.visibility = "visible";
+        document.getElementById('answerButton').style.display = "none";
+        document.getElementById('nextQuestion').style.display = "block";
+    }
+
+</script>
 </body>
 </html>
